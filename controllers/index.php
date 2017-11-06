@@ -1,13 +1,11 @@
 <?php
-require ("../entities/Client.php");
-require ("../entities/Produit.php");
 
-//Instance of new Client
-$my_client = new Client("Toto", 56);
-$my_product  = new Produit("Voiture");
+function loadClass($class) {
+  require("../entities/" . $class . ".php");
+}
+spl_autoload_register("loadClass");
 
-$my_client->addProductToBasket($my_product);
-
+$mon_chien = new Chien("fifi", 5, "long");
 
 include "../views/indexVue.php";
  ?>
