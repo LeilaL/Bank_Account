@@ -3,5 +3,5 @@ require ("../model/AccountManager.php");
 
 
 
-include '../views/indexView.php';
+include '../views/singleView.php';
  ?>

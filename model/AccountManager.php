@@ -5,7 +5,7 @@ class AccountManager {
 
 // CONNECTION BDD
   public function getBdd() {
-      $bdd = new PDO('mysql:host=localhost;dbname=;charset=utf8', 'root', 'leilalababsa');
+      $bdd = new PDO('mysql:host=localhost;dbname=Bank_Account;charset=utf8', 'root', 'leilalababsa');
       return $bdd;
   }
 
