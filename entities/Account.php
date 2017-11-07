@@ -1,69 +1,97 @@
 <?php
+declare(strict_types=1);
 
-abstract class AnimalCompagnie {
+class Vehicle {
+  protected $id;
+  protected $name;
+  protected $amount;
 
-  protected $nom;
-  protected $age;
 
+// SETTERS
+/**
+    * Set the value of Id
+    *
+    * @param mixed id
+    *
+    * @return self
+    */
+public function setId($id) {
+    $this->id = $id;
+}
 
-    /**
-     * Get the value of Nom
+/**
+     * Set the value of Name
      *
-     * @return mixed
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set the value of Nom
-     *
-     * @param mixed nom
-     *
-     * @return self
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of Age
-     *
-     * @return mixed
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * Set the value of Age
-     *
-     * @param mixed age
+     * @param mixed name
      *
      * @return self
      */
-    public function setAge($age)
-    {
-        $this->age = $age;
 
-        return $this;
+  public function setName($name) {
+      $this->name = $name;
+  }
+
+  /**
+     * Set the value of Amount
+     *
+     * @param mixed amount
+     *
+     * @return self
+     */
+  public function setAmount($amount) {
+      $this->amount = $amount;
+  }
+
+
+  // GETTERS
+
+  /**
+    * Get the value of Id
+    *
+    * @param empty
+    *
+    * @return int
+    */
+  public function getId() {
+    return $this->id;
+  }
+
+  /**
+      * Get the value of Name
+      *
+      * @return mixed
+      */
+  public function getName() {
+    return $this->name;
+  }
+
+  /**
+      * Get the value of Amount
+      *
+      * @return mixed
+      */
+  public function getAmount() {
+    return $this->amount;
+  }
+
+
+  // METHODS
+  public function hydrate($data){
+    foreach ($data as $key => $value) {
+      // var_dump($data);
+      $method = "set" .ucfirst($key);
+      // var_dump($method);
+      if(method_exists($this, $method)){
+        // var_dump($method);
+        $this->$method($value);
+      }
     }
+  }
 
-    final public function manger() {
-      echo $this->getNom() . " mange";
-    }
+  public function __construct($data) {
+$this->hydrate($data);
+  }
 
-    abstract function bouger();
-
-    public function __construct($nom, $age) {
-      $this->setNom($nom);
-      $this->setAge($age);
-    }
 
 }
 
