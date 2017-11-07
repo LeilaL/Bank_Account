@@ -32,9 +32,8 @@ public function getAccount($id){
 $response=$this->getBdd()->prepare("SELECT * FROM accounts WHERE id=:id");
 $response->bindValue('id', $id, PDO::PARAM_INT);
 $response->execute();
-$vehicle=$response->fetch(PDO::FETCH_ASSOC);
-// $name_Class=ucfirst($vehicle['type']);
-// return new $name_Class($vehicle);
+$account =$response->fetch(PDO::FETCH_ASSOC);
+return $account;
 }
 
 

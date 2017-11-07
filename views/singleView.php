@@ -9,16 +9,13 @@ include("template/header.php");
     <div class="col s12 m6 offset-m3 l6 offset-l3">
       <div class="card teal darken-4">
         <div class="card-content white-text">
-          <span class="card-title"><strong>Compte N°</strong></span>
-          <span class="card-title"><?php echo $singleVehicle->getType()?></span>
-          <p><?php echo $singleVehicle->getBrand()?></p>
-          <p><?php echo $singleVehicle->getYear()?></p>
-          <p><?php echo $singleVehicle->getColor()?></p>
+          <span class="card-title"><strong>Compte N°<?php echo $singleClient->getId()?></strong></span>
+          <span class="card-title"><?php echo $singleClient->getName()?></span>
+          <p><?php echo $singleClient->getAmount()?> €</p>
         </div>
         <div class="card-action">
-          <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="#modal<?php echo $singleVehicle->getId();?>">Retrait</a>
-          <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Versement</a>
-          <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Virement</a>
+          <!-- <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Versement</a> -->
+          <!-- <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Virement</a> -->
           <a class="waves-effect btn-large teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Supprimer</a>
         </div>
       </div>

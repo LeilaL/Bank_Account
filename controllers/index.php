@@ -12,14 +12,17 @@ if (!empty($_POST)) {
   $accountManager->insertAccount($finances);
 }
 
+// FOREACH FOR SHOW INFOS
 $clients= $accountManager->getAllAccounts();
-
 foreach ($clients as $key => $value) {
   $clients[$key] = new Account($value);
 }
 
-// $my_client= new Account($data);
-
+// DELETE
+if(isset($_GET['delete'])){
+  $id_delete=$_GET['delete'];
+  $donnees = $accountManager->deleteAccount($id_delete);
+}
 
 
 include '../views/indexView.php';
