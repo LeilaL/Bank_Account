@@ -11,12 +11,12 @@ class AccountManager {
 
 
 // INSERT ACCOUNT IN BDD
-  public function insertAccount(account $v){
+  public function insertAccount(account $a){
     $req=$this->getBdd()->prepare('INSERT INTO accounts(id, name, amount)
     VALUES(:id, :name, :amount)');
-    $req->bindValue(':id', $v->getId());
-      $req->bindValue(':name', $v->getName(), PDO::PARAM_STR);
-      $req->bindValue(':amount', $v->getAmount(), PDO::PARAM_INT);
+    $req->bindValue(':id', $a->getId());
+      $req->bindValue(':name', $a->getName(), PDO::PARAM_STR);
+      $req->bindValue(':amount', $a->getAmount(), PDO::PARAM_INT);
     $req->execute();
     }
 

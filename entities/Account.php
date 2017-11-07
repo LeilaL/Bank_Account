@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Vehicle {
+class Account {
   protected $id;
   protected $name;
   protected $amount;
