@@ -1,11 +1,21 @@
 <?php
+require ("../model/AccountManager.php");
+require ("../entities/Account.php");
 
-function loadClass($class) {
-  require("../entities/" . $class . ".php");
+// INSTANTIATION OF AccountManager
+$accountManager = new AccountManager();
+
+$ClientManager= new ClientManager();
+
+$clients= $accountManager->getAllAccounts();
+
+foreach ($clients as $key => $value) {
+  $clients[$key] = new Account($value);
 }
-spl_autoload_register("loadClass");
 
-$mon_chien = new Chien("fifi", 5, "long");
+$my_client= new Account($data);
 
-include "../views/indexVue.php";
+
+
+include '../views/indexView.php';
  ?>
