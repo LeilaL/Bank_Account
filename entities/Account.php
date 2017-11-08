@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Vehicle {
+class Account {
   protected $id;
   protected $name;
   protected $amount;
@@ -78,11 +78,8 @@ public function setId($id) {
   // METHODS
   public function hydrate($data){
     foreach ($data as $key => $value) {
-      // var_dump($data);
       $method = "set" .ucfirst($key);
-      // var_dump($method);
       if(method_exists($this, $method)){
-        // var_dump($method);
         $this->$method($value);
       }
     }
