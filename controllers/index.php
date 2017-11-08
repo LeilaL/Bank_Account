@@ -20,7 +20,7 @@ foreach ($clients as $key => $value) {
 
 // DELETE
 if(isset($_GET['delete'])){
-  $id_delete=$_GET['delete'];
+  $id_delete=(int)$_GET['delete'];
   $donnees = $accountManager->deleteAccount($id_delete);
 }
 
