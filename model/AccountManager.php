@@ -44,9 +44,12 @@ $req->bindValue(':id', $id_delete, PDO::PARAM_INT);
 $req ->execute();
 }
 
-// ADD ????
-
+// WITHDRAWAL ACCOUNT
+function withDrawalAccount($amount, $id){
+  $req=$this->getBdd()->prepare("UPDATE accounts SET amount= amount - :amount WHERE id= :id");
+  $req->bindValue('id', $id, PDO::PARAM_INT);
+  $req->bindValue('amount', $amount);
+  $req->execute();
 }
 
-
- ?>
+}
