@@ -13,6 +13,14 @@ if (!empty($_GET['join'])) {
    $client = new Account($singleClient);
 }
 
+// TEST UPDATE
+if(isset($_POST['amount']) AND isset($_POST['id'])){
+  $retrait=$_POST['amount'];
+  $id=$_POST['id'];
+  $accountManager->withDrawalAccount($retrait, $id);
+header('Location:single.php');
+}
+
 
 
 

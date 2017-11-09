@@ -2,13 +2,14 @@
 include('template/header.php');
 ?>
 
+<!-- ==================== FORM FOR ADD ACCOUNT ================= -->
+
   <h5 class="header center-align">Formulaire Ajout Compte</h5>
   <a href="index.php" id="return"><strong>Retour</strong></a>
   <div id="form" class="container">
   <div class="row">
 
     <form class="col s12" action="index.php" method="post">
-
 
       <div class="input-field col s12 m10 l7">
         <input id="text1" name="name" type="text" class="validate">
@@ -29,6 +30,7 @@ include('template/header.php');
   </div>
 </div>
 
+<!-- ======================================================== -->
 
 
 <?php

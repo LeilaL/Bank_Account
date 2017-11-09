@@ -10,6 +10,7 @@ if (!empty($_POST)) {
   ['name' => $_POST['name'],
   'amount' => $_POST['amount']]);
   $accountManager->insertAccount($finances);
+  header('Location:index.php');
 }
 
 // FOREACH FOR SHOW INFOS
@@ -21,7 +22,8 @@ foreach ($clients as $key => $value) {
 // DELETE
 if(isset($_GET['delete'])){
   $id_delete=(int)$_GET['delete'];
-  $donnees = $accountManager->deleteAccount($id_delete);
+  $accountManager->deleteAccount($id_delete);
+header('Location:index.php');
 }
 
 

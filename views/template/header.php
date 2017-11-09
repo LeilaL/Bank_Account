@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../assets/css/materialize.css">
-    <!-- <link rel="stylesheet" href="../assets/css/materialize.min.css"> -->
     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/style.css">
