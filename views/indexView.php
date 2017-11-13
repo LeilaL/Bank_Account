@@ -14,7 +14,6 @@
              <div class="card-content white-text">
                <span class="card-title"><strong>Compte N°<?php echo $infosAccount->getId()?></strong></span>
                <span class="card-title">Mr/Mme <?php echo $infosAccount->getName()?></span>
-               <!-- <p><?php echo $infosAccount->getAmount()?> €</p> -->
              </div>
              <div class="card-action">
                <a href="single.php?join=<?php echo $infosAccount->getId()?>">Effectuer des transactions</a><br>
