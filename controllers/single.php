@@ -9,17 +9,39 @@ $accountManager = new AccountManager();
 if (!empty($_GET['join'])) {
   $id =(int) $_GET['join'];
   $singleClient = $accountManager->getAccount($id);
-  // var_dump($singleClient);
    $client = new Account($singleClient);
 }
 
-// TEST UPDATE
-if(isset($_POST['amount']) AND isset($_POST['id'])){
-  $retrait=$_POST['amount'];
-  $id=$_POST['id'];
-  $accountManager->withDrawalAccount($retrait, $id);
-header('Location:single.php');
+
+// UPDATE WITHDRAWAL
+// if(isset($_POST['amount']) AND isset($_POST['id'])){
+//   $retrait=$_POST['amount'];
+//   $id=$_POST['id'];
+//   $accountManager->withDrawalAccount($retrait, $id);
+// header('Location:single.php');
+// }
+
+
+// TEST UPDATE RETRAIT
+if(isset($_POST['amount']) AND isset($_GET['join'])){
+$account = $accountManager->getAccount($_GET['join']);
+$newClient = $account->getAmount();
+
+if ($_POST['amount']=$newClient) {
+  $account->retrait($_POST['amount']);
+  $accountManager->withDrawalAccount($account);
+  header('Location:single.php');
 }
+}
+
+
+// UPDATE PAYMENT
+// if(isset($_POST['credit']) AND isset($_POST['identif'])){
+//   $payment=$_POST['credit'];
+//   $id=$_POST['identif'];
+//   $accountManager->paymentAccount($payment, $id);
+// header('Location:single.php');
+// }
 
 
 
