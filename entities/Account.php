@@ -75,6 +75,15 @@ public function setId($id) {
   }
 
 
+// RETRAIT
+  public function retrait($amount){
+  return $this->amount += $amount;
+  }
+  // VERSEMENT
+    public function versement($amount){
+    $this->amount -= $amount;
+    }
+
   // METHODS
   public function hydrate($data){
     foreach ($data as $key => $value) {
