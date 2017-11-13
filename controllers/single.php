@@ -13,35 +13,17 @@ if (!empty($_GET['join'])) {
 }
 
 
+
 // UPDATE WITHDRAWAL
-// if(isset($_POST['amount']) AND isset($_POST['id'])){
-//   $retrait=$_POST['amount'];
-//   $id=$_POST['id'];
-//   $accountManager->withDrawalAccount($retrait, $id);
-// header('Location:single.php');
-// }
-
-
-// TEST UPDATE RETRAIT
-if(isset($_POST['amount']) AND isset($_GET['join'])){
-$account = $accountManager->getAccount($_GET['join']);
-$newClient = $account->getAmount();
-
-if ($_POST['amount']=$newClient) {
-  $account->retrait($_POST['amount']);
+if(isset($_POST['ok'])){
+// $account = $accountManager->getAccount($_GET['join']);
+$account = new Account($_POST['amount'], $_POST['id'], $_POST['wd']);
+  $account->retrait($_POST['wd']);
+  $account->getAmount();
   $accountManager->withDrawalAccount($account);
-  header('Location:single.php');
-}
+  // header('Location: index.php');
 }
 
-
-// UPDATE PAYMENT
-// if(isset($_POST['credit']) AND isset($_POST['identif'])){
-//   $payment=$_POST['credit'];
-//   $id=$_POST['identif'];
-//   $accountManager->paymentAccount($payment, $id);
-// header('Location:single.php');
-// }
 
 
 

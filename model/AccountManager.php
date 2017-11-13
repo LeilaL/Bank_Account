@@ -45,20 +45,20 @@ $req ->execute();
 }
 
 // WITHDRAWAL ACCOUNT
-function withDrawalAccount(Account $test){
-  $req=$this->getBdd()->prepare("UPDATE accounts SET amount= :amount WHERE id= :id");
-  $req->bindValue('id', $test->getId(), PDO::PARAM_INT);
-  $req->bindValue('amount',  $test->getAmount(), PDO::PARAM_INT);
+function withDrawalAccount(Account $acc){
+  $req=$this->getBdd()->prepare("UPDATE accounts SET amount = :amount WHERE id = :id");
+  $req->bindValue('id', $acc->getId(), PDO::PARAM_INT);
+  $req->bindValue('amount',  $acc->getAmount(), PDO::PARAM_INT);
   $req->execute();
 }
 
 // PAYMENT ACCOUNT
-function paymentAccount($amount, $id){
-  $req=$this->getBdd()->prepare("UPDATE accounts SET amount= amount + :amount WHERE id= :id");
-  $req->bindValue('id', $id, PDO::PARAM_INT);
-  $req->bindValue('amount', $amount);
-  $req->execute();
-}
+// function paymentAccount($amount, $id){
+//   $req=$this->getBdd()->prepare("UPDATE accounts SET amount= amount + :amount WHERE id= :id");
+//   $req->bindValue('id', $id, PDO::PARAM_INT);
+//   $req->bindValue('amount', $amount);
+//   $req->execute();
+// }
 
 // TRANSFER ACCOUNT TO ANOTHER ACCOUNT
 // FUNCTION QUI APPELLE LES 2 AUTRES FONCTIONS

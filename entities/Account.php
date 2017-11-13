@@ -74,17 +74,16 @@ public function setId($id) {
     return $this->amount;
   }
 
+  // METHODS
 
-// RETRAIT
   public function retrait($amount){
-  return $this->amount += $amount;
+   $this->amount -= $amount;
   }
-  // VERSEMENT
+
     public function versement($amount){
-    $this->amount -= $amount;
+    $this->amount += $amount;
     }
 
-  // METHODS
   public function hydrate($data){
     foreach ($data as $key => $value) {
       $method = "set" .ucfirst($key);

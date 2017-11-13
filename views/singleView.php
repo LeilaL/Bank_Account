@@ -29,18 +29,19 @@ include("template/header.php");
 <div id="modal<?php echo $client->getId();?>" class="modal">
      <div class="modal-content">
 <h5 class="header center-align">Formulaire Retrait</h5>
-  <form class="col s12" action="single.php" method="post">
+  <form class="col s12" action="index.php" method="post">
 
 <p>Votre solde actuel est de : <?php echo $client->getAmount()?> € </p>
     <div class="input-field col s12 m10 l7">
-      <input id="year" name="amount" type="text" class="validate">
+      <input id="year" name="wd" type="text" class="validate">
       <label for="year">Montant du retrait</label>
     </div>
 
     <div class="modal-footer col s10">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <input type="hidden" name="amount" value="<?php echo $client->getAmount()?>">
       <input type="hidden" name="id" value="<?php echo $client->getId()?>">
-      <input class="waves-effect btn teal lighten-3" value="Envoyer" type="submit" >
+      <input class="waves-effect btn teal lighten-3" name="ok" value="Envoyer" type="submit" >
     </div>
 
   </form>
