@@ -7,8 +7,8 @@ $accountManager = new AccountManager();
 
 if (!empty($_POST)) {
   $finances = new Account(
-    ['name' => $_POST['name'],
-    'amount' => $_POST['amount']]
+    ['name' => htmlspecialchars($_POST['name']),
+    'amount' => (float)htmlspecialchars($_POST['amount'])]
   );
   $accountManager->insertAccount($finances);
   header('Location:index.php');
