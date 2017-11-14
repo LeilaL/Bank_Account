@@ -18,7 +18,7 @@ class Account
   */
   public function setId($id)
   {
-    $this->id = $id;
+    $this->id = (int)$id;
   }
 
   /**
@@ -43,7 +43,7 @@ class Account
   */
   public function setAmount($amount)
   {
-    $this->amount = $amount;
+    $this->amount = (float)$amount;
   }
 
 
@@ -83,14 +83,14 @@ class Account
 
   // METHODS
 
-  public function retrait($amount)
+  public function addCash($amount)
   {
-    $this->amount -= $amount;
+    $this->amount -= (int)$amount;
   }
 
-  public function versement($amount)
+  public function removeCash($amount)
   {
-    $this->amount += $amount;
+    $this->amount += (int)$amount;
   }
 
   public function hydrate($data)

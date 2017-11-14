@@ -18,7 +18,7 @@ include("template/header.php");
         <a class="modal-trigger" href="#modal<?php echo $client->getId();?>">Retrait</a>
         <a class="modal-trigger" href="#modal1<?php echo $client->getId();?>">Versement</a>
         <a class="modal-trigger" href="#modal2<?php echo $client->getId();?>">Virement</a>
-        <a class="waves-effect btn teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $value['id'];?>">Supprimer</a>
+        <a class="waves-effect btn teal lighten-3 modal-trigger" href="index.php?delete=<?php echo $client->getId();?>">Supprimer</a>
       </div>
     </div>
   </div>

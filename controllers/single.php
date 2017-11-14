@@ -17,15 +17,12 @@ if (!empty($_GET['join'])) {
 // UPDATE WITHDRAWAL
 if (isset($_POST['ok'])) {
   // $account = $accountManager->getAccount($_GET['join']);
-  $account = new Account($_POST['amount'], $_POST['id'], $_POST['wd']);
-  $account->retrait($_POST['wd']);
+  $account = new Account((float)$_POST['amount'], (int)$_POST['id'], (float)$_POST['wd']);
+  $account->addCash((float)$_POST['wd']);
   $account->getAmount();
   $accountManager->withDrawalAccount($account);
   // header('Location: index.php');
 }
-
-
-
 
 
 include '../views/singleView.php';
