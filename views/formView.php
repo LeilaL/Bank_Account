@@ -4,9 +4,9 @@ include('template/header.php');
 
 <!-- ==================== FORM FOR ADD ACCOUNT ================= -->
 
-  <h5 class="header center-align">Formulaire Ajout Compte</h5>
-  <a href="index.php" id="return"><strong>Retour</strong></a>
-  <div id="form" class="container">
+<h5 class="header center-align">Formulaire Ajout Compte</h5>
+<a href="index.php" id="return"><strong>Retour</strong></a>
+<div id="form" class="container">
   <div class="row">
 
     <form class="col s12" action="index.php" method="post">
@@ -17,7 +17,7 @@ include('template/header.php');
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="year" name="amount" type="text" class="validate">
+        <input id="year" name="amount" type="number" class="validate">
         <label for="year">Montant</label>
       </div>
 

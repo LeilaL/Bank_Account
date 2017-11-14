@@ -1,14 +1,15 @@
 <?php
-require ("../model/AccountManager.php");
-require ("../entities/Account.php");
+require("../model/AccountManager.php");
+require("../entities/Account.php");
 
 // INSTANTIATION OF AccountManager
 $accountManager = new AccountManager();
 
 if (!empty($_POST)) {
   $finances = new Account(
-  ['name' => $_POST['name'],
-  'amount' => $_POST['amount']]);
+    ['name' => $_POST['name'],
+    'amount' => $_POST['amount']]
+  );
   $accountManager->insertAccount($finances);
   header('Location:index.php');
 }
@@ -20,10 +21,10 @@ foreach ($clients as $key => $value) {
 }
 
 // DELETE
-if(isset($_GET['delete'])){
+if (isset($_GET['delete'])) {
   $id_delete=(int)$_GET['delete'];
   $accountManager->deleteAccount($id_delete);
-header('Location:index.php');
+  header('Location:index.php');
 }
 
 
@@ -31,4 +32,3 @@ header('Location:index.php');
 
 
 include '../views/indexView.php';
- ?>
