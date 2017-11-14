@@ -12,8 +12,6 @@ if (!empty($_GET['join'])) {
   $client = new Account($singleClient);
 }
 
-
-
 // UPDATE WITHDRAWAL
 if (isset($_POST['ok'])) {
   // $account = $accountManager->getAccount($_GET['join']);

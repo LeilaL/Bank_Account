@@ -24,7 +24,6 @@ include("template/header.php")
         </div>
         <?php
       }
-      //  header(refresh)
       ?>
     </div>
   </div>

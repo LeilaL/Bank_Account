@@ -5,6 +5,8 @@ require("../entities/Account.php");
 // INSTANTIATION OF AccountManager
 $accountManager = new AccountManager();
 
+
+// INSERT INFOS IN BDD
 if (!empty($_POST)) {
   $finances = new Account(
     ['name' => htmlspecialchars($_POST['name']),
@@ -20,7 +22,7 @@ foreach ($clients as $key => $value) {
   $clients[$key] = new Account($value);
 }
 
-// DELETE
+// DELETE CARDS
 if (isset($_GET['delete'])) {
   $id_delete=(int)$_GET['delete'];
   $accountManager->deleteAccount($id_delete);
